@@ -1,0 +1,4 @@
+module examples {
+	requires junit;
+
+}
