@@ -24,20 +24,21 @@ public class Brackets {
 			result = "Not Balanced";
 		}
 		
-		Pattern pattern = Pattern.compile("\\(");
-		Pattern closePtrn = Pattern.compile("\\)");
-		Matcher matcher = pattern.matcher(input);
-		Matcher matcherClose = closePtrn.matcher(input);
-		int count = 0;
-		int countClose = 0;
-		while (matcher.find()) {
-		    count++;
+		Pattern parenPattern = Pattern.compile("\\(");
+		Pattern closeParenPtrn = Pattern.compile("\\)");
+		Matcher openParenMatcher = parenPattern.matcher(input);
+		Matcher closeParenMatcher = closeParenPtrn.matcher(input);
+		int countOpenParen = 0;
+		int countCloseParen = 0;
+		while (openParenMatcher.find()) {
+		    countOpenParen++;
 		}
-		while (matcherClose.find()) {
-			countClose++;
+		while (closeParenMatcher.find()) {
+			countCloseParen++;
 		}
-		if(count!=countClose)
+		if(countOpenParen!=countCloseParen) {
 			result = "Not Balanced";
+		}
 		
 		Pattern pattern1 = Pattern.compile("\\{");
 		Pattern closePtrn1 = Pattern.compile("\\}");
@@ -51,8 +52,9 @@ public class Brackets {
 		while (matcherClose1.find()) {
 			countClose1++;
 		}
-		if(count1!=countClose1)
+		if(count1!=countClose1) {
 			result = "Not Balanced";
+		}
 		
 		Pattern pattern2 = Pattern.compile("\\[");
 		Pattern closePtrn2 = Pattern.compile("\\]");
@@ -66,8 +68,9 @@ public class Brackets {
 		while (matcherClose2.find()) {
 			countClose2++;
 		}
-		if(count2!=countClose2)
+		if(count2!=countClose2) {
 			result = "Not Balanced";
+		}
 		
 		return result;
 	}
