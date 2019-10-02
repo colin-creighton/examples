@@ -23,7 +23,7 @@ public class Brackets {
 		else if(input.indexOf("]")>-1&&input.indexOf("[")<0||input.indexOf("}")>-1&&input.indexOf("{")<0||input.indexOf(")")>-1&&input.indexOf("(")<0) {
 			result = "Not Balanced";
 		}
-		
+			
 		//Below code takes care of additional test cases
 		
 		Pattern parenPattern = Pattern.compile("\\(");
