@@ -74,5 +74,12 @@ public class BracketsTest {
 		
 		assertEquals("Not Balanced",test7);
 	}
+	
+	@Test
+	public void testSpaces() {
+		String test7 = Brackets.balancedBrackets("{ { }}");
+		
+		assertEquals("Balanced",test7);
+	}
 
 }
