@@ -24,6 +24,8 @@ public class Brackets {
 			result = "Not Balanced";
 		}
 		
+		//Below code takes care of additional test cases
+		
 		Pattern parenPattern = Pattern.compile("\\(");
 		Pattern closeParenPtrn = Pattern.compile("\\)");
 		Matcher openParenMatcher = parenPattern.matcher(input);
