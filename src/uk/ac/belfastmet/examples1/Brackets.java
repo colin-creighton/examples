@@ -13,7 +13,7 @@ public class Brackets {
 	 */
 	public static String balancedBrackets(String input) {
 		String result = "Balanced";
-		if(input.length()%2!=0)
+		if(input.length()%2!=0) //is the bracket count uneven? instafail
 			result = "Not Balanced";
 		if(input.contains("{]")||input.contains("(]")||input.contains("{)")||input.contains("[)")||input.contains("[}")||input.contains("(}"))
 			result = "Not Balanced";
