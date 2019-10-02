@@ -86,7 +86,7 @@ public class BracketsTest {
 	public void testOpposites() {
 		String test7 = Brackets.balancedBrackets(")}{(");
 		
-		assertEquals("Balanced",test7);
+		assertEquals("Not Balanced",test7);
 	}
 
 

@@ -13,14 +13,22 @@ public class Brackets {
 	 */
 	public static String balancedBrackets(String input) {
 		String result = "Balanced";
-		if(input.length()%2!=0) //is the bracket count uneven? instafail
-			result = "Not Balanced";
-		if(input.contains("{]")||input.contains("(]")||input.contains("{)")||input.contains("[)")||input.contains("[}")||input.contains("(}"))
-			result = "Not Balanced";
-		else if(input.indexOf("[")>-1&&input.indexOf("]")<0||input.indexOf("{")>-1&&input.indexOf("}")<0||input.indexOf("(")>-1&&input.indexOf(")")<0) {
+		char startBrace = input.charAt(0);
+		
+		if(input.length()%2!=0||startBrace=='}'||startBrace==']'||startBrace==')') //is the bracket count uneven? instafail Does it start with a closing brace? INSTAFAIL
+		{
 			result = "Not Balanced";
 		}
-		else if(input.indexOf("]")>-1&&input.indexOf("[")<0||input.indexOf("}")>-1&&input.indexOf("{")<0||input.indexOf(")")>-1&&input.indexOf("(")<0) {
+		if(input.contains("{]")||input.contains("(]")||input.contains("{)")||input.contains("[)")||input.contains("[}")||input.contains("(}"))
+		{
+			result = "Not Balanced";
+		}
+		else if(input.indexOf("[")>-1&&input.indexOf("]")<0||input.indexOf("{")>-1&&input.indexOf("}")<0||input.indexOf("(")>-1&&input.indexOf(")")<0) 
+		{
+			result = "Not Balanced";
+		}
+		else if(input.indexOf("]")>-1&&input.indexOf("[")<0||input.indexOf("}")>-1&&input.indexOf("{")<0||input.indexOf(")")>-1&&input.indexOf("(")<0) 
+		{
 			result = "Not Balanced";
 		}
 			
