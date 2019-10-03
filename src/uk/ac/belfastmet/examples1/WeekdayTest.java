@@ -36,7 +36,25 @@ public class WeekdayTest {
 		System.out.println(weekdayTest.palindrome("hannah"));
 		System.out.println(weekdayTest.palindrome("martin"));
 		System.out.println(weekdayTest.palindrome("racecar"));
+		
+		System.out.println(weekdayTest.plusOut("12xy34", "xy"));
 	}
+	
+	public String plusOut(String str, String word) {
+		  String newStr="";
+		  for(int i = 0; i<str.length()-word.length()+1;i++)
+		  {
+		    if(!(str.substring(i,i+word.length()).equals(word)))
+		      newStr+="+";
+		    else{
+		      newStr+=word;
+		      
+		    }
+		    
+		  }
+		  return newStr;
+		}
+
 	
 	/**
 	 * Checks if the parameter string is a palindrome
